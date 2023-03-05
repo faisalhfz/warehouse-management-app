@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Warehouse Management App</h1>
+
+    <div class="input">
+      <form class="form" action="/" method="POST">
+        <label>
+          Barcode:
+          <input type="text" name="barcode" value="<%= locals.barcode %>" />
+        </label>
+
+        <button type="submit">Query</button>
+      </form>
+    </div>
+
+    <div class="data">
+      <h3>Stock Data</h3>
+      <p>Barcode: <%= locals.barcode %></p>
+      <p>SKU: <%= locals.sku %></p>
+      <p>Item name: <%= locals.itemName %></p>
+      <p>Quantity: <%= locals.quantity %></p>
+    </div>
+
+    <br />
+
+    <div class="inbound-call">
+      <form
+        class="form"
+        action="/stocks/<%= locals.barcode %>/sendInboundTask"
+        method="POST"
+      >
+        <label hidden>
+          Barcode:
+          <input type="text" name="barcode" value="<%= locals.barcode %>" />
+        </label>
+        <button type="submit">Call Inbound API</button>
+      </form>
+    </div>
+  </body>
+</html>
