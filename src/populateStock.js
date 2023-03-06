@@ -2,6 +2,12 @@ const { Stock } = require('./config/db');
 
 const stocks = [
   {
+    barcode: 'T0000001',
+    sku: 'AIR-123',
+    itemName: 'OUTSOLE',
+    quantity: 100,
+  },
+  {
     barcode: 'T0000002',
     sku: 'DRO-MOT',
     itemName: 'Drone Motor',
